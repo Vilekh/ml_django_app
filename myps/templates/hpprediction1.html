@@ -1,0 +1,60 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+<div id="page-wrapper">
+	<div id="page" class="container">
+<div class="title">
+<h2>House price prediction system</h2>
+</div>
+
+<center>
+<form method="post" action="/hpprediction/" >
+{% csrf_token %}
+<table cellspacing="10" cellpadding="10" >
+<tr>
+<td>House Size (in sqft)</td>
+<td><input type="text" name="hsize" placeholder="Enter House Size"/></td>    
+</tr>
+
+<tr>
+<td>Number of Bedrooms</td>
+<td><input type="text" name="hbedroom" placeholder="Enter Number of Bedrooms"/></td>    
+</tr>
+
+<tr>
+<td>Number of Bathrooms</td>
+<td><input type="text" name="hbathroom" placeholder="Enter Number of Bathrooms"/></td>    
+</tr>
+
+<tr>
+<td>House Age</td>
+<td><input type="text" name="hage" placeholder="Enter House Age"/></td>    
+</tr>
+
+<tr>
+<td>Distance to City Center (in miles)</td>
+<td><input type="text" name="hdistance" placeholder="Enter Distance to City Center(miles)"/></td>    
+</tr>
+
+<tr>
+<td>Number of Floors</td>
+<td><input type="text" name="hfloors" placeholder="Enter Number of Floors"/></td>    
+</tr>
+
+<tr>
+<td><input type="submit" value="Predict House Price" /></td>    
+</tr>
+
+</table>    
+
+</form>
+
+<h1>Predicted House Price : {{price}} </h1>
+
+</center>
+
+</div>
+</div>
+
+{% include 'footer.html' %}
